@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+select, input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.week-schedule, .weekly-summary {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  select, input[type="date"] {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  .week-schedule, .weekly-summary {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .week-schedule {
+    overflow-x: auto;
+  }
+
+  .week-schedule .grid {
+    min-width: 100%;
+  }
+
+  .week-schedule .grid > div {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .week-schedule .grid > div > div:nth-child(3) {
+    flex-grow: 1;
+  }
+}
